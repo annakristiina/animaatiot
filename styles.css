@@ -150,3 +150,18 @@ main {
         transform: scale(1.5);
     }
 }
+
+.jatkuva-sumennus {
+    animation: zoomaaJaSumentaa 2s ease-in-out infinite alternate;
+}
+
+@keyframes zoomaaJaSumentaa {
+    0% {
+        transform: scale(1);
+        filter: blur(0px);
+    }
+    100% {
+        transform: scale(1.15);
+        filter: blur(6px);
+    }
+}
