@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     display: grid;
     grid-template-areas:
@@ -9,7 +14,6 @@
     grid-template-rows: auto 100px 1fr 500px;
     gap: 10px;
     background-color: maroon;
-    padding: 10px;
     justify-content: center;
     align-content: center;
     min-height: 800px;
@@ -95,6 +99,7 @@ main {
 .animaatio1, .animaatio2, .animaatio3, .animaatio4, .animaatio5, .animaatio6 {
     padding: 10px;
     text-align: center;
+    background-color: #ffff;
 }
 
 .animaatio-alue {
