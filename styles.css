@@ -184,7 +184,7 @@ main {
 footer {
     grid-area: footer;
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 28rem), 1fr));
     gap: 10px;
     padding: 10px;
     background-color: maroon;
@@ -201,6 +201,12 @@ footer {
     background:
         radial-gradient(ellipse at 15% 100%, rgba(255, 209, 102, 0.22), transparent 40%),
         linear-gradient(125deg, #54101c, #8b2635 55%, #48101c);
+}
+
+.mainosbanneri--kahvi {
+    background:
+        radial-gradient(ellipse at 85% 0%, rgba(255, 209, 102, 0.2), transparent 42%),
+        linear-gradient(125deg, #38251d, #68432f 55%, #342219);
 }
 
 .mainos-ylateksti {
