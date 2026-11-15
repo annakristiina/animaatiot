@@ -1,17 +1,18 @@
 .container {
     display: grid;
     grid-template-areas:
-        "header header"
-        "nav nav"
-        "main main"
-        "footer footer";
-    grid-template-columns: 1fr 1fr;
+        "header"
+        "nav"
+        "main"
+        "footer";
+    grid-template-columns: 1fr;
     grid-template-rows: auto 100px 1fr 500px;
     gap: 10px;
     background-color: maroon;
+    padding: 10px;
     justify-content: center;
     align-content: center;
-
+    min-height: 800px;
 }
 
 header {
@@ -86,23 +87,19 @@ main {
     grid-area: main;
     padding: 30px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: 1fr 1fr;
     gap: 10px;
 }
 
-h2 {
-    color: white;
-}
-
-.animaatio1, animaatio2, animaatio3, animaatio4, animaatio5, animaatio6 {
+.animaatio1, .animaatio2, .animaatio3, .animaatio4, .animaatio5, .animaatio6 {
     padding: 10px;
     text-align: center;
 }
 
 .animaatio-alue {
-    max-width: 400px;
-    max-height: 300px;
+    width: 400px;
+    height: 300px;
     overflow: hidden;
 }
 
@@ -177,7 +174,7 @@ h2 {
 @keyframes mustavalkoAnimaatio {
     0% {
         filter: grayscale(100%);
-        transform: scale(3);
+        transform: scale(1.2);
     }
     100% {
         filter: grayscale(0%);
