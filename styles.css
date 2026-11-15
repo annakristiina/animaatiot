@@ -6,7 +6,7 @@
         "main main"
         "footer footer";
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 100px 1fr 1fr;
+    grid-template-rows: auto 100px 1fr 500px;
     gap: 10px;
     background-color: darkred;
     justify-content: center;
@@ -16,7 +16,7 @@
 
 header {
     grid-area: header;
-    height: 80vh;
+    height: 60vh;
     justify-items: center;
     align-items: center;
     text-align: center;
@@ -84,7 +84,7 @@ nav a:focus-visible {
 
 main {
     grid-area: main;
-    padding: 10px;
+    padding: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -193,7 +193,7 @@ footer {
 .mainosbanneri {
     position: relative;
     overflow: hidden;
-    padding: clamp(2rem, 6vw, 5rem);
+    padding: clamp(1.5rem, 3vw, 3.5rem) clamp(1rem, 3vw, 2rem) 0.1rem;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 12px;
     color: #fff8f0;
