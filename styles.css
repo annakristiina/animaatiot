@@ -1,0 +1,29 @@
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "main main"
+        "footer footer";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    background-color: darkred;
+    justify-content: center;
+    align-content: center;
+
+}
+
+header {
+    grid-area: header;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+header img {
+    display: block;
+    width: 100%;
+    height: 80%;
+    object-fit: hidden;
+}
