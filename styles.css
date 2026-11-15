@@ -115,3 +115,14 @@ main {
 .animaatio-alue:hover .skaalaus {
     transform: scale(1.5);
 }
+
+.tarkentuva-kuva {
+    filter: blur(4px);
+    transform: scale(1);
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.animaatio-alue:hover .tarkentuva-kuva {
+    transform: scale(1.1);
+    filter: blur(0px);
+}
