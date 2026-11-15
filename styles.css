@@ -91,6 +91,10 @@ main {
     gap: 10px;
 }
 
+h2 {
+    color: white;
+}
+
 .animaatio1, animaatio2, animaatio3, animaatio4, animaatio5, animaatio6 {
     padding: 10px;
     text-align: center;
