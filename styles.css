@@ -165,3 +165,18 @@ main {
         filter: blur(6px);
     }
 }
+
+.mustavalkoLataus {
+    animation: mustavalkoAnimaatio 5s ease-in-out forwards;
+}
+
+@keyframes mustavalkoAnimaatio {
+    0% {
+        filter: grayscale(100%);
+        transform: scale(3);
+    }
+    100% {
+        filter: grayscale(0%);
+        transform: scale(1);
+    }
+}
