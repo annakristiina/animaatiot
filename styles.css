@@ -184,10 +184,59 @@ main {
 footer {
     grid-area: footer;
     display: grid;
-    grid-template-areas: mainos1 mainos2;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 150px;
+    grid-template-columns: minmax(0, 1fr);
     gap: 10px;
     padding: 10px;
     background-color: maroon;
+}
+
+.mainosbanneri {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(2rem, 6vw, 5rem);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    color: #fff8f0;
+    text-align: center;
+    background:
+        radial-gradient(ellipse at 15% 100%, rgba(255, 209, 102, 0.22), transparent 40%),
+        linear-gradient(125deg, #54101c, #8b2635 55%, #48101c);
+}
+
+.mainos-ylateksti {
+    margin: 0 0 0.5rem;
+    color: #ffd166;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.mainosbanneri h2 {
+    margin: 0 0 0.75rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.mainosbanneri > p:not(.mainos-ylateksti) {
+    max-width: 38rem;
+    margin: 0 auto 1.5rem;
+    line-height: 1.6;
+}
+
+.mainosbanneri a {
+    display: inline-block;
+    padding: 0.8rem 1.4rem;
+    border-radius: 999px;
+    color: #54101c;
+    background-color: #ffd166;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.mainosbanneri a:hover,
+.mainosbanneri a:focus-visible {
+    transform: translateY(-3px);
+    background-color: #ffe3a0;
 }
