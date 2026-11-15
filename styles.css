@@ -81,3 +81,37 @@ nav a:focus-visible {
     color: lightpink;
     transform: translateY(-5px);
 }
+
+main {
+    grid-area: main;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+.animaatio1, animaatio2, animaatio3, animaatio4, animaatio5, animaatio6 {
+    padding: 10px;
+    text-align: center;
+}
+
+.animaatio-alue {
+    max-width: 400px;
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.animaatio-alue img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.skaalaus {
+    transition: transform 0.5s ease;
+}
+
+.animaatio-alue:hover .skaalaus {
+    transform: scale(1.5);
+}
