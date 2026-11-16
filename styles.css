@@ -338,3 +338,29 @@ footer {
         grid-template-columns: minmax(0, 1fr);
     }
 }
+
+@media (max-width: 1950px) {
+    .container {
+        width: 100%;
+        max-width: 1950px;
+        margin: 0 auto;
+    }
+
+    main {
+        width: 90%;
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+    .teksti {
+        width: 100%;
+        max-width: 900px;
+        justify-self: start;
+    }
+
+    .animaatio-alue {
+        width: 100%;
+        max-width: 800px;
+        justify-self: end;
+    }
+}
