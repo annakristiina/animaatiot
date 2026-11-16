@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -11,17 +17,17 @@ body {
         "main"
         "footer";
     grid-template-columns: 1fr;
-    grid-template-rows: auto 100px 1fr 500px;
+    grid-template-rows: auto auto 1fr auto;
     gap: 10px;
     background-color: maroon;
     justify-content: center;
     align-content: center;
-    min-height: 800px;
+    min-height: 100vh;
 }
 
 header {
     grid-area: header;
-    height: 60vh;
+    height: clamp(16rem, 60vh, 42rem);
     justify-items: center;
     align-items: center;
     text-align: center;
@@ -45,7 +51,7 @@ header img {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 30px;
+    padding: clamp(1rem, 4vw, 2rem);
     color: #FFFF;
     z-index: 2;
     background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
@@ -66,7 +72,7 @@ header img {
 }
 
 .kuvateksti h3 {
-    font-size: 7rem;
+    font-size: clamp(3rem, 9vw, 7rem);
 }
 
 nav {
@@ -74,16 +80,17 @@ nav {
     justify-items: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: clamp(0.5rem, 2vw, 1.25rem);
     background-color: maroon;
     font-size: 1.5rem;
-    font-family: Georgia, "Times New Roman", serif;;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 .nav-linkit {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -91,7 +98,7 @@ nav a {
     text-decoration: none;
     transition: color 0.25s ease, transform 0.25s ease;
     color: white;
-    padding: 20px;
+    padding: clamp(0.6rem, 1.8vw, 1.25rem);
 }
 
 nav a:hover,
@@ -106,11 +113,11 @@ nav a:focus-visible {
 
 main {
     grid-area: main;
-    padding: 50px;
+    padding: clamp(1rem, 4vw, 3rem);
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 10px;
+    gap: clamp(1rem, 2vw, 2rem);
+    align-items: center;
 }
 
 .teksti {
@@ -125,8 +132,17 @@ h2 {
     padding: 20px;
 }
 
+main h2 {
+    margin: 0;
+    padding: 0.75rem;
+}
+
 p {
     font-size: large;
+}
+
+main p {
+    line-height: 1.6;
 }
 
 .animaatio1, .animaatio2, .animaatio3 {
@@ -134,8 +150,9 @@ p {
 }
 
 .animaatio-alue {
-    width: 600px;
-    height: 400px;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 3 / 2;
     overflow: hidden;
 }
 
@@ -197,7 +214,7 @@ footer {
         linear-gradient(125deg, #54101c, #8b2635 55%, #48101c);
 }
 
-.mainosbanneri--kahvi {
+.mainosbanneri-kahvi {
     background:
         radial-gradient(ellipse at 85% 0%, rgba(255, 209, 102, 0.2), transparent 42%),
         linear-gradient(125deg, #38251d, #68432f 55%, #342219);
@@ -243,17 +260,15 @@ footer {
 
 @media (max-width: 600px) {
     .container {
-        grid-template-areas: 
-        "header"
-        "nav"
-        "main"
-        "footer";
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto 1fr auto;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     header {
-        font-size: clamp(10px, 3.5vw, 15px);
+        height: clamp(14rem, 50vh, 26rem);
+    }
+
+    .kuvateksti h3 {
+        font-size: clamp(2.75rem, 12vw, 4.5rem);
     }
 
     .menu-painike {
@@ -267,6 +282,7 @@ footer {
     .nav-linkit {
         display: none;
         flex-direction: column;
+        gap: 0.25rem;
     }
 
     #valikko:checked ~ .nav-linkit {
@@ -274,6 +290,51 @@ footer {
     }
 
     nav a {
-        padding: 12px;
+        padding: 0.75rem 1rem;
+        transform: none;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+        transform: none;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "leivonnainen-kuva"
+            "leivonnainen-teksti"
+            "kahvi-kuva"
+            "kahvi-teksti"
+            "sijainti-kuva"
+            "sijainti-teksti";
+    }
+
+    .animaatio1 {
+        grid-area: leivonnainen-kuva;
+    }
+
+    main > .teksti:nth-child(2) {
+        grid-area: leivonnainen-teksti;
+    }
+
+    .animaatio2 {
+        grid-area: kahvi-kuva;
+    }
+
+    main > .teksti:nth-child(3) {
+        grid-area: kahvi-teksti;
+    }
+
+    .animaatio3 {
+        grid-area: sijainti-kuva;
+    }
+
+    main > .teksti:nth-child(6) {
+        grid-area: sijainti-teksti;
+    }
+
+    footer {
+        grid-template-columns: minmax(0, 1fr);
     }
 }
