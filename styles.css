@@ -96,10 +96,8 @@ main {
     gap: 10px;
 }
 
-.animaatio1, .animaatio2, .animaatio3, .animaatio4, .animaatio5, .animaatio6 {
-    padding: 10px;
+.animaatio1, .animaatio2, .animaatio3 {
     text-align: center;
-    background-color: #ffff;
 }
 
 .animaatio-alue {
@@ -122,17 +120,6 @@ main {
     transform: scale(1.5);
 }
 
-.tarkentuva-kuva {
-    filter: blur(4px);
-    transform: scale(1);
-    transition: transform 0.5s ease, filter 0.5s ease;
-}
-
-.animaatio-alue:hover .tarkentuva-kuva {
-    transform: scale(1.1);
-    filter: blur(0px);
-}
-
 .mustavalko {
     filter: grayscale(100%);
     transform: scale(1);
@@ -144,47 +131,15 @@ main {
     transform: scale(1.08);
 }
 
-.jatkuva-zoomaus {
-    animation: zoomaus 6s ease-in-out infinite alternate;
+.tarkentuva-kuva {
+    filter: blur(4px);
+    transform: scale(1);
+    transition: transform 0.5s ease, filter 0.5s ease;
 }
 
-@keyframes zoomaus {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.5);
-    }
-}
-
-.jatkuva-sumennus {
-    animation: zoomaaJaSumentaa 2s ease-in-out infinite alternate;
-}
-
-@keyframes zoomaaJaSumentaa {
-    0% {
-        transform: scale(1);
-        filter: blur(0px);
-    }
-    100% {
-        transform: scale(1.15);
-        filter: blur(6px);
-    }
-}
-
-.mustavalkoLataus {
-    animation: mustavalkoAnimaatio 5s ease-in-out forwards;
-}
-
-@keyframes mustavalkoAnimaatio {
-    0% {
-        filter: grayscale(100%);
-        transform: scale(1.2);
-    }
-    100% {
-        filter: grayscale(0%);
-        transform: scale(1);
-    }
+.animaatio-alue:hover .tarkentuva-kuva {
+    transform: scale(1.1);
+    filter: blur(0px);
 }
 
 footer {
