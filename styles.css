@@ -96,6 +96,22 @@ main {
     gap: 10px;
 }
 
+.teksti {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    text-align: center;
+}
+
+h2 {
+    font-size: xx-large;
+    padding: 20px;
+}
+
+p {
+    font-size: large;
+}
+
 .animaatio1, .animaatio2, .animaatio3 {
     text-align: center;
 }
