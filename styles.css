@@ -80,6 +80,12 @@ nav {
     font-family: Georgia, "Times New Roman", serif;;
 }
 
+.nav-linkit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 nav a {
     display: inline-block;
     text-decoration: none;
@@ -92,6 +98,10 @@ nav a:hover,
 nav a:focus-visible {
     color: lightpink;
     transform: translateY(-5px);
+}
+
+#valikko, .menu-painike {
+    display: none;
 }
 
 main {
@@ -229,4 +239,41 @@ footer {
 .mainosbanneri a:focus-visible {
     transform: translateY(-3px);
     background-color: #ffe3a0;
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+    }
+
+    header {
+        font-size: clamp(10px, 3.5vw, 15px);
+    }
+
+    .menu-painike {
+        display: block;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .nav-linkit {
+        display: none;
+        flex-direction: column;
+    }
+
+    #valikko:checked ~ .nav-linkit {
+        display: flex;
+    }
+
+    nav a {
+        padding: 12px;
+    }
 }
