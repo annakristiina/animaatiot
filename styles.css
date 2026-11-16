@@ -30,7 +30,7 @@ header {
 .kuva-alue {
     overflow: hidden;
     position: relative;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Tangerine", sans-serif;
 }
 
 header img {
@@ -89,10 +89,10 @@ nav a:focus-visible {
 
 main {
     grid-area: main;
-    padding: 30px;
+    padding: 50px;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 10px;
 }
 
@@ -103,8 +103,8 @@ main {
 }
 
 .animaatio-alue {
-    width: 400px;
-    height: 300px;
+    width: 600px;
+    height: 400px;
     overflow: hidden;
 }
 
